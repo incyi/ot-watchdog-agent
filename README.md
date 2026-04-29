@@ -65,8 +65,6 @@ chmod +x start.sh
 ```
 
 **Access:**
-- WordPress: http://localhost:8000
-- MySQL: localhost:3306
 - Agent: Running in container
 
 ### Option 2: Production (Raspberry Pi)
