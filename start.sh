@@ -14,8 +14,6 @@ case $COMMAND in
     echo "✅ Stack started!"
     echo ""
     echo "📋 Services:"
-    echo "  - WordPress: http://localhost:8000"
-    echo "  - MySQL: localhost:3306"
     echo "  - Agent: Running in container"
     echo ""
     echo "🔍 View logs: docker-compose logs -f"
