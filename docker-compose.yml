@@ -1,50 +1,9 @@
 version: '3.8'
 
 services:
-  # MySQL Database
-  db:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: wordpress
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
-    ports:
-      - "3306:3306"
-    volumes:
-      - db_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      timeout: 20s
-      retries: 10
-
-  # WordPress
-  wordpress:
-    image: wordpress:latest
-    depends_on:
-      db:
-        condition: service_healthy
-    environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_DB_NAME: wordpress
-      WORDPRESS_DEBUG: "true"
-    ports:
-      - "8000:80"
-    volumes:
-      - wordpress_data:/var/www/html
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/"]
-      timeout: 10s
-      retries: 5
-
   # OT Watchdog Agent
   ot-watchdog-agent:
     build: .
-    depends_on:
-      wordpress:
-        condition: service_healthy
     environment:
       # WordPress configuration
       WORDPRESS_URL: http://wordpress
@@ -68,7 +27,6 @@ services:
 
 volumes:
   db_data:
-  wordpress_data:
 
 networks:
   default:
