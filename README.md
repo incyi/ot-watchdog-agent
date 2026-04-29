@@ -1,5 +1,9 @@
 # OT Watchdog Agent
 
+[![Pylint](https://github.com/incyi/ot-watchdog-agent/actions/workflows/pylint.yml/badge.svg)](https://github.com/incyi/ot-watchdog-agent/actions/workflows/pylint.yml)
+[![Docker Image CI](https://github.com/incyi/ot-watchdog-agent/actions/workflows/docker-image.yml/badge.svg)](https://github.com/incyi/ot-watchdog-agent/actions/workflows/docker-image.yml)
+
+
 🔍 **Lightweight monitoring agent for OT devices (PLC, HMI, Switch, Modem)**
 
 Sends device status to [ot-watchdog WordPress plugin](https://github.com/incyi/ot-watchdog) via REST API.
