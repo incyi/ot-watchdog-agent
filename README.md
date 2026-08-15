@@ -304,3 +304,6 @@ GPL-2.0-or-later (same as WordPress plugin)
 
 - [ot-watchdog](https://github.com/incyi/ot-watchdog) - WordPress plugin
 - [ot-watchdog-agent](https://github.com/incyi/ot-watchdog-agent) - This agent
+
+
+removed develop branch, will create again after 1.0.0 is released. 
